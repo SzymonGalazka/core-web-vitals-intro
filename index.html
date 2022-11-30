@@ -1,40 +1,282 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      .f-small {
+        font-size: 2rem;
+      }
+      .container {
+        display: flex;
+        margin: 0rem 5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 75%;
+      }
+      .bg {
+        background-color: white;
+        border-radius: 1rem;
+      }
+      .with-bg {
+        background-color: black;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+    </style>
 
-		<title>reveal.js</title>
+    <title>Core Web Vitals</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img style="width: 60%" src="media/lighthouse.svg" />
+          <h1>Core Web Vitals</h1>
+          <h3>Wydajność stron internetowych</h3>
+          <h4>Travcorp Poland</h4>
+          <p class="f-small">Szymon Gałązka | Frontend Tech Lead</p>
+        </section>
+        <section>
+          <section>
+            <h2>Co to jest Core Web Vitals?</h2>
+          </section>
+          <section>
+            <p>zacznijmy od początku...</p>
+          </section>
+          <section
+            data-background-image="media/history-0.png"
+            data-background-opacity="0.2"
+          >
+            <p>zaczęło się od pozycjonowania stron w latach 90...</p>
+          </section>
+          <section>
+            <p>
+              silniki wyszukiwania zaczęły posługiwać się botami do przeszukania
+              Internetu...
+            </p>
+            <p class="fragment fade-up">
+              ...w oparciu o słowa-klucze znalezione na stronach.
+            </p>
+            <p class="fragment fade-up">I wszystko byłoby w porządku...</p>
+          </section>
+          <section>
+            <p>...gdyby nie...</p>
+            <p class="fragment fade-up">...ludzka pomysłowość</p>
+          </section>
+          <section data-background-image="media/history-1.png"></section>
+          <section data-background-image="media/history-2.png"></section>
+          <section data-background-image="media/history-3.png"></section>
+          <section data-background-image="media/history-4.png"></section>
+          <section
+            data-background-image="media/history-5.gif"
+            data-background-size="contain"
+          ></section>
+          <section>
+            <p>Core Web Vitals!</p>
+            <p class="fragment fade-up">(a właściwie Web Vitals)</p>
+          </section>
+          <section>
+            <h4 data-id="title">Metryki Web Vitals</h4>
+            <img style="width: 50%" src="media/vitals.png" />
+            <ul>
+              <li class="fragment fade-up">LCP - Largest Contentful Paint</li>
+              <li class="fragment fade-up">FID - First Input Delay</li>
+              <li class="fragment fade-up">CLS - Cumulative Layout Shift</li>
+              <div class="fragment fade-up">
+                <li>FCP - First Contentful Paint</li>
+                <li>TBT - Total Blocking Time</li>
+                <li>TTI - Time To Interactive</li>
+                <li>TTFB - Time To First Byte</li>
+              </div>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>LCP - Largest Contentful Paint</h2>
+            <h4>Metryka <i>szybkości ładowania</i></h4>
+          </section>
+          <section data-auto-animate>
+            <h2>LCP - Largest Contentful Paint</h2>
+            <h4>Metryka <i>szybkości ładowania</i></h4>
+            <img class='bg' src="media/lcp-1.svg" />
+          </section>
+          <section>
+            <h3>Example #1</h3>
+            <img src="media/lcp-2.avif" />
+          </section>
+          <section>
+            <h3>Example #2</h3>
+            <img src="media/lcp-3.avif" />
+          </section>
+          <section>
+            <h3>Example #3</h3>
+            <img src="media/lcp-4.avif" />
+          </section>
+          <section>
+            <h3>Example #4</h3>
+            <img src="media/lcp-5.avif" />
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>CLS - Cumulative Layout Shift</h2>
+            <h4>Metryka <i>stabilności wizualnej</i></h4>
+          </section>
+          <section data-auto-animate>
+            <h2>CLS - Cumulative Layout Shift</h2>
+            <h4>Metryka <i>stabilności wizualnej</i></h4>
+            <img class="bg" src="media/cls-1.svg" />
+            <pre><code class="fragment fade-up" data-trim data-noescape>
+              layout shift = impact fraction * distance fraction
+            </code></pre>
+          </section>
+          <section>
+            <video data-autoplay loop src="media/cls.webm"></video>
+          </section>
+          <section>
+            <h3>Impact fraction (obszar)</h3>
+            <img width="80%" src="media/cls-2.avif" />
+          </section>
+          <section>
+            <h3>Distance fraction (dystans)</h3>
+            <img width="80%" src="media/cls-3.avif" />
+          </section>
+          <section>
+            <h3>Przykład</h3>
+            <img width="80%" src="media/cls-4.avif" />
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h2>FID - First Input Delay</h2>
+            <h4>Metryka <i>interaktywności</i></h4>
+          </section>
+          <section data-auto-animate>
+            <h2>FID - First Input Delay</h2>
+            <h4>Metryka <i>interaktywności</i></h4>
+            <h3>⬇</h3>
+            <h2>TBT - Total Blocking Time</h2>
+            <h4>Metryka <i>responsywności</i></h4>
+          </section>
+          <section data-auto-animate>
+            <h3>Total Blocking Time</h3>
+            <p>
+              Łączne wykonanie skryptów na głównym wątku przeglądarki,
+              trwających dłuzej niz 50ms
+            </p>
+            <img class="bg" width="80%" src="media/tbt-1.svg" />
+          </section>
+          <section data-auto-animate>
+            <h3>Total Blocking Time</h3>
+            <p>
+              Skumulowany czas wykonania zadań na głównym wątku przeglądarki,
+              trwających dłuzej niz 50ms
+            </p>
+            <img class="bg" width="80%" src="media/tbt-2.svg" />
+          </section>
+          <section data-auto-animate>
+            <h3>Total Blocking Time</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Czas trwania zadania</th>
+                  <th>Blokujący czas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Zadanie 1</td>
+                  <td>250 ms</td>
+                  <td>200 ms</td>
+                </tr>
+                <tr>
+                  <td>Zadanie 2</td>
+                  <td>90 ms</td>
+                  <td>40 ms</td>
+                </tr>
+                <tr>
+                  <td>Zadanie 3</td>
+                  <td>35 ms</td>
+                  <td>0 ms</td>
+                </tr>
+                <tr>
+                  <td>Zadanie 5</td>
+                  <td>155 ms</td>
+                  <td>105 ms</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    Łączny czas blokowania głównego wątku: 345 ms
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <img class="bg" width="80%" src="media/tbt-2.svg" />
+          </section>
+        </section>
+        <section
+          data-background-image="media/end.gif"
+          data-background-size="contain"
+        >
+          <section>
+            <div class="container">
+              <h2 class="with-bg">Dziękuję!</h2>
+            </div>
+          </section>
+          <section>
+            <div class="container">
+              <h2 class="with-bg">Przydatne linki</h2>
+              <ul
+                style="
+                  display: flex;
+                  padding-left: 3rem;
+                  flex-direction: column;
+                  align-items: flex-start;
+                "
+                class="with-bg"
+              >
+                <li><a href="https://web.dev/vitals/">web.dev/vitals</a></li>
+                <li>
+                  <a href="https://www.patterns.dev/posts/#performance-patterns"
+                    >patterns.dev</a
+                  >
+                </li>
+                <li><a href="https://www.travcorp.pl/">travcorp.pl</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
